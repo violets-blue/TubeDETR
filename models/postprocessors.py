@@ -9,6 +9,17 @@ from torch import nn
 
 from util import box_ops
 
+###
+# PostProcessSTVG:
+    logits->[start_index,end_index]
+    introduce a mask to ensure that the end index > start index
+# PostProcess:
+    logits->{'bounding boxes':(x,y,h,w)}
+    transfer the format to cater to the dataset
+    from normalized [0,1] to normal data
+# build_postprocessor:
+    postprocessors: Dict[str, nn.Module]
+###
 
 class PostProcessSTVG(nn.Module):
     @torch.no_grad()
