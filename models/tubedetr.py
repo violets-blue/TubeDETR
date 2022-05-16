@@ -19,6 +19,40 @@ from util.misc import NestedTensor
 from .backbone import build_backbone
 from .transformer import build_transformer
 
+###
+class MLP:
+    implement MLP head of (d_i,d_h,d_o,num_layers)
+    MLP_for_boxes
+    MLP_for_start_end_prediction
+
+class TubeDETR:
+    samples:
+        NestedTensor:(frames,mask),[n,3,H,W],[n,H,W]
+    input_fast,mask_fast
+    input_slow,mask_slow
+    prepare src and mask
+    
+    if encode==True:
+        # video-text encoder
+        memory=transformer()
+    else:
+        #space-time decoder
+        hs=transformer(memory)
+        use MLP heads to get ouptut
+        out['boxes','start_end','aux']
+        
+class Criterion:
+    def loss1
+    def loss2
+    def loss3
+    def get_loss(output):
+        return losses['loss1','loss2','loss3']
+    def forward()
+
+def build():
+    return model,criterion
+    
+###
 
 class MLP(nn.Module):
     """Very simple multi-layer perceptron (also called FFN)"""
