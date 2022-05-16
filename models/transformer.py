@@ -20,6 +20,32 @@ import math
 
 from .position_encoding import TimeEmbeddingSine, TimeEmbeddingLearned
 
+###
+class Transformer:
+   encoder, decoder, resizer
+   how to forward
+   
+class Encoder:
+   modify the EncoderLayer
+   
+class Decoder:
+   modify the DecoderLayer
+   
+class EncoderLayer:
+   use nn backbones to implement a transformer
+   (ffn + attention)
+   
+class DecoderLayer:
+   # Temporal Self attention
+   # Time Aligned Cross attention
+   normal decoder layers
+   
+class Feature_Resizer:
+   linear transformation + dropout + normalization
+   f : d_1 -> d_2
+      
+def build_transformer
+###
 
 class Transformer(nn.Module):
     def __init__(
