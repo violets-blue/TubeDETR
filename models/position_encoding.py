@@ -10,6 +10,17 @@ import torch
 from torch import nn
 
 
+### realize the following embeddings ###
+
+# time embedding learned: nn.Embedding
+# time embedding sine: f : pos->value
+# position embedding sine
+# position embedding learned (for 2D)
+
+### only have to write the forward functions ###
+
+
+
 class TimeEmbeddingLearned(nn.Module):
     """
     Absolute pos embedding, learned.
