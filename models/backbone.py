@@ -16,6 +16,22 @@ from util.misc import NestedTensor
 
 from .position_encoding import build_position_encoding
 
+###
+# implement build_backbone(args):
+    args.backbone
+    backbone=BackBone()
+    model=Joiner(backbone,pe)
+    return model
+
+# class Joiner:
+    model(x)->y
+    Joiner(x)->(y,y_emb)
+
+# Backbone(model_name) : load from torchvisions
+    model(x)->y
+    Backbone(x)->mask(y)
+###
+
 
 class FrozenBatchNorm2d(torch.nn.Module):
     """
